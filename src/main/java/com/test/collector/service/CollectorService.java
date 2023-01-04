@@ -35,16 +35,35 @@ public class CollectorService {
 	@Autowired
 	private CollectorRepository collectorRepository;
 
-	public String test(@RequestParam Map<String, Object> map) throws Exception {
 
 
-
-
+	public Integer register(@RequestParam Map<String, Object> map) throws Exception {
 		System.out.println("[SERVICE]"  + map );
+		// 빨간 책일때는 책이름 앞에 [빨강] ㅡ을 붙여라
 
-		return null;
+		return collectorRepository.register(map);
 	}
+	public Integer update(@RequestParam Map<String, Object> map) throws Exception {
+		System.out.println("[SERVICE]"  + map );
+		// 빨간 책일때는 책이름 앞에 [빨강] ㅡ을 붙여라
+
+		return collectorRepository.update(map);
+	}
+/*
+책 삭제 api개발
+책 select api 개발
+
+HTTP 통신
+RESTFUL API
 
 
+
+-> 코인 API
+현재 시세조회,
+판매,
+구매, -> 현재가 ~~가
+
+
+ */
 }
 

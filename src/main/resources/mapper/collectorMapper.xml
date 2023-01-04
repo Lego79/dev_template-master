@@ -4,8 +4,25 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.test.mapper.collectorMapper">
-	<select id="test" parameterType="String"
-		resultType="collectorDto">
-		SELECT 1
-	</select>
+	<insert id="register" parameterType="HashMap">
+		insert into book
+			(book_id,
+			book_nm,
+			author,
+			color,
+			 reg_dt)
+		values	(
+		        #{bookId}::integer,
+		        #{bookNm},
+		        #{author},
+		        #{color},
+		        current_timestamp
+				  )
+
+	</insert>
+	<update id="update"  parameterType="HashMap">
+		update book
+		set color = #{color}
+		where book_id = #{bookId}::integer
+	</update>
 </mapper>

@@ -31,13 +31,12 @@
 	</appender>
 
 	<logger name="jdbc" level="OFF" />
-<!-- <logger name="jdbc.sqltiming" level="DEBUG"/>
-<logger name="jdbc.sqltiming" level="DEBUG"/> 
+<logger name="jdbc.sqltiming" level="DEBUG"/>
+
 	<logger name="jdbc.resultsettable" level="WARN" additivity="false">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="STDDAILY" />
-	</logger>-->
-
+	</logger>
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="STDDAILY" />

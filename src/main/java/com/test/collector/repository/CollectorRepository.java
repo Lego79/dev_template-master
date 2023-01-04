@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.Map;
 
 
 @Repository
@@ -19,10 +20,11 @@ public class CollectorRepository {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public CollectorDto mappingTest() throws Exception {
-
-		return sqlSession.selectOne(namespace + "com.test.mapper.collectorMapper");
-
+	public Integer register(Map<String, Object> map) throws Exception {
+		return sqlSession.insert(namespace + ".register", map);
 	}
-	
+	public Integer update(Map<String, Object> map) throws Exception {
+		return sqlSession.update(namespace + ".update", map);
+	}
+	//CRUD
 }

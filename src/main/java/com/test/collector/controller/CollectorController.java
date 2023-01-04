@@ -19,13 +19,35 @@ public class CollectorController {
 	
 	@Autowired
 	private CollectorService collectorService;
-	
+
+	@ResponseBody
 	@RequestMapping("/register")
-	public String test(@RequestParam Map<String, Object> map) throws Exception {
+	public Integer register(@RequestParam Map<String, Object> map) throws Exception {
 		System.out.println("[CONTROLLER]" + map);
-		return collectorService.test(map);
+		return collectorService.register(map);
+	}
+	@ResponseBody
+	@RequestMapping("/update")
+	public Integer update(@RequestParam Map<String, Object> map) throws Exception {
+		System.out.println("[CONTROLLER]" + map);
+		// book_id, color를 input으로 받고  해당 책을 해당 색깔로 업데이트
+		return collectorService.update(map);
+	}
+	@ResponseBody
+	@RequestMapping("/delete")
+	public Integer delete(@RequestParam Map<String, Object> map) throws Exception {
+		System.out.println("[CONTROLLER]" + map);
+		// book_id를 input으로 받고 해당 책을 삭제하는 로직 작성
+		return collectorService.update(map);
 	}
 
+	@ResponseBody
+	@RequestMapping("/select")
+	public Integer buy(@RequestParam Map<String, Object> map) throws Exception {
+		System.out.println("[CONTROLLER]" + map);
+		// book_id를 input으로 받고 해당 책을 삭제하는 로직 작성
+		return collectorService.update(map);
+	}
 	// controller -> 요청 주소 정의 및 요청 파라미터 확인
 	// service -> 실제 로직 처리
 	// repository -> 데이터베이스에 실행시키는 쿼리부분과 연결
