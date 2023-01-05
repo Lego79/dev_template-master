@@ -25,4 +25,8 @@
 		set color = #{color}
 		where book_id = #{bookId}::integer
 	</update>
+
+	<select id="select"  parameterType="HashMap">
+
+	</select>
 </mapper>
