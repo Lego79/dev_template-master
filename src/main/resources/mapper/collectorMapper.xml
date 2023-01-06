@@ -18,15 +18,22 @@
 		        #{color},
 		        current_timestamp
 				  )
-
 	</insert>
+
+
 	<update id="update"  parameterType="HashMap">
 		update book
 		set color = #{color}
 		where book_id = #{bookId}::integer
 	</update>
 
-	<select id="select"  parameterType="HashMap">
+	<select id="select" parameterType="HashMap">
 
 	</select>
+
+	<delete id="delete"  parameterType="HashMap">
+
+	</delete>
+
+
 </mapper>

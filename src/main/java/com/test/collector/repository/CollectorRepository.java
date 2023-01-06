@@ -26,5 +26,14 @@ public class CollectorRepository {
 	public Integer update(Map<String, Object> map) throws Exception {
 		return sqlSession.update(namespace + ".update", map);
 	}
+
+	public Integer selectOne(Map<String, Object> map) throws Exception {
+		return sqlSession.selectOne(namespace + ".select", map);
+	}
+
+	public Integer delete(Map<String, Object> map) throws Exception {
+		return sqlSession.delete(namespace + ".delete", map);
+	}
+
 	//CRUD
 }

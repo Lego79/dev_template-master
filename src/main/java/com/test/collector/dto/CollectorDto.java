@@ -9,7 +9,5 @@ import lombok.Data;
 @Data
 @Alias("collectorDto")
 public class CollectorDto {
-    private String bookNm;
 
-    private String color;
 }
