@@ -53,14 +53,14 @@ public class CollectorService {
 
 	public Integer selectOne(@RequestParam Map<String, Object> map) throws Exception {
 		System.out.println("[SERVICE]"  + map );
-		// 빨간 책일때는 책이름 앞에 [빨강] ㅡ을 붙여라
+
 
 		return collectorRepository.selectOne(map);
 	}
 
 	public Integer delete(@RequestParam Map<String, Object> map) throws Exception {
 		System.out.println("[SERVICE]"  + map );
-		// 빨간 책일때는 책이름 앞에 [빨강] ㅡ을 붙여라
+
 
 		return collectorRepository.delete(map);
 	}

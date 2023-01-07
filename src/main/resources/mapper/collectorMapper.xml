@@ -28,11 +28,12 @@
 	</update>
 
 	<select id="select" parameterType="HashMap">
+		select bookNm, author FROM book WHERE #{bookId}::integer
 
 	</select>
 
 	<delete id="delete"  parameterType="HashMap">
-
+		delete FROM book where book_id = #{bookId}::integer
 	</delete>
 
 
