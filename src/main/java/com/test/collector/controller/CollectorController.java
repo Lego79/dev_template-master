@@ -5,48 +5,48 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.test.collector.repository.CollectorRepository;
 import com.test.collector.service.CollectorService;
 
-@Controller
-@RequestMapping("/book")
+@RestController
+@RequestMapping("/students")
 public class CollectorController {
-	
-	@Autowired
+
 	private CollectorService collectorService;
 
 	@ResponseBody
 	@RequestMapping("/register")
 	public Integer register(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[CONTROLLER]" + map);
+
+		System.out.println("controller - register" + map);
+
 		return collectorService.register(map);
+
 	}
+
 	@ResponseBody
 	@RequestMapping("/update")
 	public Integer update(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[CONTROLLER]" + map);
-		// book_id, color를 input으로 받고  해당 책을 해당 색깔로 업데이트
-		return collectorService.update(map);
+		System.out.println("controller - update " + map);
 
+		return collectorService.update(map);
 	}
 
 	@ResponseBody
 	@RequestMapping("/select")
-	public Integer selectOne(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[CONTROLLER]" + map);
+	public Integer select(@RequestParam Map<String, Object> map) throws Exception {
+		System.out.println("controller - select " + map);
 
-		return collectorService.selectOne(map);
+		return collectorService.select(map);
 	}
+
 	@ResponseBody
 	@RequestMapping("/delete")
 	public Integer delete(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[CONTROLLER]" + map);
-		// book_id를 input으로 받고 해당 책을 삭제하는 로직 작성
+		System.out.println("controller - delete " + map);
+
 		return collectorService.delete(map);
 	}
 
@@ -58,4 +58,4 @@ public class CollectorController {
 	// 과제 4개 순서대로 연결하고 - 셀렉트1
 
 	// 스프링 빈 / DI / AOP / 		HTTP
-} 
+}

@@ -38,13 +38,13 @@ public class CollectorService {
 
 
 	public Integer register(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[SERVICE - register]"  + map );
+		System.out.println("[SERVICE]"  + map );
 		// 빨간 책일때는 책이름 앞에 [빨강] ㅡ을 붙여라
 
 		return collectorRepository.register(map);
 	}
 	public Integer update(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[SERVICE - update]"  + map );
+		System.out.println("[SERVICE]"  + map );
 		// 빨간 책일때는 책이름 앞에 [빨강] ㅡ을 붙여라
 
 		return collectorRepository.update(map);
@@ -52,7 +52,7 @@ public class CollectorService {
 
 
 	public Integer selectOne(@RequestParam Map<String, Object> map) throws Exception {
-		System.out.println("[SERVICE - select]"  + map );
+		System.out.println("[SERVICE]"  + map );
 
 
 		return collectorRepository.selectOne(map);
