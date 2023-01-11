@@ -39,7 +39,7 @@ public class CollectorController {
 	public Integer select(@RequestParam Map<String, Object> map) throws Exception {
 		System.out.println("controller - select " + map);
 
-		return collectorService.select(map);
+		return collectorService.selectOne(map);
 	}
 
 	@ResponseBody
