@@ -11,17 +11,16 @@ import com.test.collector.repository.CollectorRepository;
 import com.test.collector.service.CollectorService;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/coin")
 public class CollectorController {
 
 	private CollectorService collectorService;
 
 	@ResponseBody
-	@RequestMapping("/register")
+	@RequestMapping("/buy")
 	public Integer register(@RequestParam Map<String, Object> map) throws Exception {
-
 		System.out.println("controller - register" + map);
-
+		//누가 어떤걸 얼마에 구입할건지
 		return collectorService.register(map);
 
 	}
