@@ -35,5 +35,5 @@ public class CollectorRepository {
 		return sqlSession.delete(namespace + ".delete", map);
 	}
 
-
+	//CRUD
 }
